@@ -124,16 +124,21 @@ print(intSentence)
 dict={"Sedan": 1500, "SUV": 2000, "Pickup": 2500, "Minivan": 1600, "Van": 2400, 
 "Semi": 13600, "Bicycle": 7, "Motorcycle": 110}
 
-
-
+veh_list = [x.upper() for x, y in dict.items() if y<5000]
+print(veh_list)
 
 ## Find all the numbers from 1 to 1000 that have a 4 in them
 
-
+list_num = [i for i in range(1, 1001) if '4' in str(i)]
+print(list_num)
 
 ## count how many times the word 'the' appears in the text file - 'sometext.txt'
 
-
+infile = open('sometext.txt', 'r')
+reader = infile.read()
+for i in reader:
+    the_amt = reader.count('the')
+print(the_amt)
 
 ## Extract the numbers from the following phrase ##
 
@@ -141,8 +146,8 @@ dict={"Sedan": 1500, "SUV": 2000, "Pickup": 2500, "Minivan": 1600, "Van": 2400,
 phrase = 'In 1984 there were 13 instances of a protest with over 1000 people attending. On average there were 15 reported injuries at each " +
 "event, with about 3 or 4 that were classifled as serious per event.'
 '''
+phrase = ('In 1984 there were 13 instances of a protest with over 1000 people attending. On average there were 15 reported injuries at each ' +
+'event, with about 3 or 4 that were classifled as serious per event.')
 
-
-
-
-
+num_phrase = [i for i in phrase if i.isdigit()]
+print(num_phrase)

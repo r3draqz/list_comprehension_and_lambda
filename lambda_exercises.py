@@ -8,8 +8,13 @@ Odd numbers from the said list:
 [1, 3, 5, 7, 9]
 '''
 
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+evens = list(filter(lambda num: num%2==0, numbers))
+print(evens)
 
+odds = list(filter(lambda num: num%2!=0, numbers))
+print(odds)
 
 
 ''' 2)
@@ -18,10 +23,8 @@ find which days of the week have exactly 6 characters.
 
 weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
-
-
-
-
+week_sixCh = list(filter(lambda day: len(day) == 6, weekdays))
+print(week_sixCh)
 
 
 
@@ -39,13 +42,11 @@ After removing the specified words from the said list:
 
 '''
 
+colors = ['orange', 'red', 'green', 'blue', 'white', 'black']
+rem_words = ['orange', 'black']
 
-
-
-
-
-
-
+rem_colors = list(filter(lambda x: x not in rem_words, colors))
+print(rem_colors)
 
 
 ''' 4)
@@ -58,9 +59,11 @@ Remove all elements from 'list1' present in 'list2:
 [1, 3, 5, 7, 9, 10]
  '''
 
+list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+list2 = [2, 4, 6, 8]
 
-
-
+rem_nums = list(filter(lambda num: num not in list2, list1))
+print(rem_nums)
 
 
 ''' 5)
@@ -78,8 +81,12 @@ Elements of the said list that contain specific substring:
 
 '''
 
+color = ['red', 'black', 'white', 'green', 'orange']
+string = 'ack'
 
+sp_color = list(filter(lambda x: string in x, color))
 
+print(sp_color)
 
 
 
@@ -93,11 +100,11 @@ str1 = "HELLO"
 str1= "hello"
 
 
-
-
-
-
-
+pw = list(filter(lambda x: any(x.isupper() for x in str1) and any(x.islower() for x in str1) and any(x.isdigit() for x in str1) and (len(str1)>=8), str1))
+if pw:
+    print('good password')
+else:
+    print('bad password')
 
 
 
@@ -112,3 +119,7 @@ original_scores = [('English', 88), ('Science', 90), ('Maths', 97), ('Social sci
 # Expected Result:
 # [('Social sciences', 82), ('English', 88), ('Science', 90), ('Maths', 97)]
 '''
+
+original_scores = [('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)]
+sort = list(filter(lambda x: x[1], original_scores))
+print(sort)
