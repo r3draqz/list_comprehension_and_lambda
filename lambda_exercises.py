@@ -121,5 +121,5 @@ original_scores = [('English', 88), ('Science', 90), ('Maths', 97), ('Social sci
 '''
 
 original_scores = [('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)]
-sort = list(filter(lambda x: x[1], original_scores))
-print(sort)
+original_scores.sort(key=lambda x: x[1])
+print(original_scores)
